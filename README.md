@@ -103,5 +103,9 @@ curl "localhost:8080/api/metrics/logs?service=payments&status=ERROR&size=5"
 
 ## Despliegue
 
-Railway detecta el `Dockerfile` (multi-stage, `eclipse-temurin:17`). El
-servicio escucha en `$PORT`.
+- **En vivo:** https://proxy-pat-backend.onrender.com
+- Render construye el `Dockerfile` (multi-stage, `eclipse-temurin:17`) y el
+  servicio escucha en `$PORT`.
+- Plan free: se duerme a los 15 min sin tráfico; la primera llamada puede tardar
+  ~40 s. El dashboard reintenta solo cada 3 s.
+- Auto-deploy en cada push a `main`.
